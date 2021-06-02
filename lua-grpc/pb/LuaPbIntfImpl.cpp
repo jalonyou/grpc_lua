@@ -48,6 +48,8 @@ LuaPbIntfImpl::LuaPbIntfImpl()
 {
     // The current dir is the default proto path.
     AddProtoPath("");
+    AddProtoPath("/");
+    AddProtoPath("/home/admin/cai/lib/lua_lib/");
 }
 
 LuaPbIntfImpl::~LuaPbIntfImpl()
