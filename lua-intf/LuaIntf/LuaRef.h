@@ -482,7 +482,8 @@ public:
     ~LuaRef()
     {
         if (L) {
-            luaL_unref(L, LUA_REGISTRYINDEX, m_ref);
+            // TODO if enable may reach crash. but if disable, lua registry tab may be larger and larger ...
+            // luaL_unref(L, LUA_REGISTRYINDEX, m_ref);
         }
     }
 
