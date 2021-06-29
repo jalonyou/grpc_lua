@@ -5,6 +5,7 @@
 
 #include <atomic>  // for atomic<>
 #include <cassert>  // for assert()
+#include <signal.h>  // for pthead_kill
 
 #include "../../core/client/channel.h"  // for GetCallTimeoutMs()
 #include "../../core/client/channel_sptr.h"     // for ChannelSptr

@@ -32,10 +32,12 @@ ServiceStub::ServiceStub(
 
 ServiceStub::~ServiceStub() {
 	assert(cq4n_sptr_);
-	if(m_pID) {
-		void *status = 0;
-		pthread_join(*m_pID, &status);
-		delete m_pID;
+	if(*m_pID) {
+	    if (pthread_kill(*m_pID, 0) == 0) {
+	        void *status = 0;
+	        pthread_join(*m_pID, &status);
+	    }
+        delete m_pID;
 	}
 }
 
